@@ -15,6 +15,7 @@
 		5DDDA20427CFF72C00B69F3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDA20327CFF72C00B69F3D /* Assets.xcassets */; };
 		5DDDA20727CFF72C00B69F3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDA20527CFF72C00B69F3D /* LaunchScreen.storyboard */; };
 		5DDDA21127CFF8CB00B69F3D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5DDDA21027CFF8CB00B69F3D /* GoogleService-Info.plist */; };
+		5DDDA21327D0040A00B69F3D /* GuardarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DDDA21227D0040A00B69F3D /* GuardarViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5DDDA20627CFF72C00B69F3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5DDDA20827CFF72C00B69F3D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5DDDA21027CFF8CB00B69F3D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		5DDDA21227D0040A00B69F3D /* GuardarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuardarViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 				5DDDA1FC27CFF72100B69F3D /* SceneDelegate.swift */,
 				5DDDA1FE27CFF72100B69F3D /* ViewController.swift */,
 				5DDDA20027CFF72100B69F3D /* Main.storyboard */,
+				5DDDA21227D0040A00B69F3D /* GuardarViewController.swift */,
 				5DDDA20327CFF72C00B69F3D /* Assets.xcassets */,
 				5DDDA20527CFF72C00B69F3D /* LaunchScreen.storyboard */,
 				5DDDA20827CFF72C00B69F3D /* Info.plist */,
@@ -91,7 +94,6 @@
 				04718023D330F9242C608E3C /* Pods-FirestoreCrud.debug.xcconfig */,
 				2091B8343743683A51129E40 /* Pods-FirestoreCrud.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -214,6 +216,7 @@
 				5DDDA1FF27CFF72100B69F3D /* ViewController.swift in Sources */,
 				5DDDA1FB27CFF72100B69F3D /* AppDelegate.swift in Sources */,
 				5DDDA1FD27CFF72100B69F3D /* SceneDelegate.swift in Sources */,
+				5DDDA21327D0040A00B69F3D /* GuardarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

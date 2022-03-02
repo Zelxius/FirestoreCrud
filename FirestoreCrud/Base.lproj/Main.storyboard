@@ -56,11 +56,66 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vJr-tm-FvO" secondAttribute="trailing" id="jZh-JE-gJs"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="FIRESTORE" id="c8c-DG-Lvv"/>
+                    <navigationItem key="navigationItem" title="FIRESTORE" id="c8c-DG-Lvv">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="59Y-pW-DwI">
+                            <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <segue destination="SK3-G4-hNG" kind="show" id="sZG-iQ-7Nb"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tabla" destination="vJr-tm-FvO" id="SLt-EO-xdn"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="904" y="53"/>
+        </scene>
+        <!--Guardar View Controller-->
+        <scene sceneID="1u6-th-ivl">
+            <objects>
+                <viewController id="SK3-G4-hNG" customClass="GuardarViewController" customModule="FirestoreCrud" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jeM-68-hHP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Titulo" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cV0-dk-VBJ">
+                                <rect key="frame" x="20" y="117" width="374" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bqc-J4-DFW">
+                                <rect key="frame" x="0.0" y="204" width="414" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YJi-BP-Ks8">
+                                <rect key="frame" x="20" y="461" width="374" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="GUARDAR">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="guardar:" destination="SK3-G4-hNG" eventType="touchUpInside" id="4Ks-3u-9el"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="MUW-8W-FuH"/>
+                        <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="l7I-IN-wWN"/>
+                    <connections>
+                        <outlet property="picker" destination="Bqc-J4-DFW" id="7mJ-XE-Xx7"/>
+                        <outlet property="titulo" destination="cV0-dk-VBJ" id="HLI-dk-ZAe"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iuJ-wM-jgd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1747.826086956522" y="52.901785714285715"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="QqG-tR-zXx">
