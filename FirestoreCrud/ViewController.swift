@@ -26,11 +26,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tabla.delegate = self
         tabla.dataSource = self
         db = Firestore.firestore()
+        traerDatosRealTime()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        traerDatos()
+        //traerDatos()
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -67,7 +68,24 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func traerDatosRealTime(){
-        
+        db.collection("peliculas").addSnapshotListener { (querySnapshot,error) in
+            if let error = error {
+                print("Error al traer los datos", error.localizedDescription)
+            }else{
+                self.lista.removeAll()
+                for document in querySnapshot!.documents{
+                    let valores = document.data()
+                    let id = document.documentID
+                    let titulo = valores["titulo"] as? String ?? "Sin titulo"
+                    let genero = valores["genero"] as? String ?? "Sin genero"
+                    let pelicula = Peliculas(titulo: titulo, genero: genero, id: id)
+                    self.lista.append(pelicula)
+                    DispatchQueue.main.async {
+                        self.tabla.reloadData()
+                    }
+                }
+            }
+        }
     }
     
     func traerDatosWhere(){
