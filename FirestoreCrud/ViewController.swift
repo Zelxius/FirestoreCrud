@@ -26,8 +26,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tabla.delegate = self
         tabla.dataSource = self
         db = Firestore.firestore()
-        //traerDatosRealTime()
-        traerDatosWhere()
+        traerDatosRealTime()
+        //traerDatosWhere()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,6 +45,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         cell.textLabel?.text = pelicula.titulo
         cell.detailTextLabel?.text = pelicula.genero
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let delete = UIContextualAction(style: .destructive, title: "Eliminar") { (_,_,_) in
+            let pelicula: Peliculas
+            pelicula = self.lista[indexPath.row]
+            let id = pelicula.id
+            self.db.collection("peliculas").document(id).delete()
+        }
+        let configuracion = UISwipeActionsConfiguration(actions: [delete])
+        return configuracion
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "editar", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "editar" {
+            if let id = tabla.indexPathForSelectedRow {
+                let fila = lista[id.row]
+                let destino = segue.destination as! GuardarViewController
+                destino.editarPelicula = fila
+            }
+        }
     }
 
     func traerDatos(){
